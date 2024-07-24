@@ -6,7 +6,7 @@ export default function ProductFetch() {
   const [data, setData] = useState();
   useEffect(() => {
     const fetchData = async () => {
-      const url = "http://localhost:3000/api/products";
+      const url = "/api/products";
       const response = await fetch(url);
       const resultData = await response.json();
       setData(resultData.products);

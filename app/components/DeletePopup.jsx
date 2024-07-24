@@ -13,10 +13,7 @@ const DeletePopup = () => {
         "Content-Type": "application/json",
       },
     };
-    const response = await fetch(
-      `http://localhost:3000/api/products/delete/${params.id}`,
-      options
-    );
+    const response = await fetch(`/api/products/delete/${params.id}`, options);
     if (response.ok) {
       router.push("/products");
     }

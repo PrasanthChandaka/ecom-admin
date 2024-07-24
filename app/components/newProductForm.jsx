@@ -12,7 +12,7 @@ const NewProductForm = () => {
   const submitHandler = async (e) => {
     e.preventDefault();
     if (name !== "" && description !== "" && price !== "") {
-      const url = "http://localhost:3000/api/products";
+      const url = "/api/products";
       const data = {
         name,
         description,

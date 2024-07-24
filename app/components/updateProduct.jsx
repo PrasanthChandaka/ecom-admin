@@ -12,7 +12,7 @@ const UpdateProduct = () => {
 
   useEffect(() => {
     const updateApi = async () => {
-      const url = `http://localhost:3000/api/products/update/${params.id}`;
+      const url = `/api/products/update/${params.id}`;
       const response = await fetch(url);
       const result = await response.json();
       const product = result.getProduct;
