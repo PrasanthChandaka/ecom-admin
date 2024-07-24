@@ -25,7 +25,7 @@ const UpdateProduct = () => {
 
   const submitUpdateForm = async (e) => {
     e.preventDefault();
-    const url = `http://localhost:3000/api/products/update/${params.id}`;
+    const url = `/api/products/update/${params.id}`;
 
     const data = {
       name: updatedName,
