@@ -12,7 +12,7 @@ const Home = () => {
         <div className="flex gap-2 bg-blue-100 items-center cursor-pointer">
           <Image
             src=""
-            alt="profile-img"
+            alt=""
             height={100}
             width={100}
             className="h-8 w-8 rounded-full"

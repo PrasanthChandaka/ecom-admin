@@ -1,6 +1,7 @@
 "use client";
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
+import Loading from "./loading";
 
 export default function ProductFetch() {
   const [data, setData] = useState();
@@ -40,7 +41,7 @@ export default function ProductFetch() {
                     </button>
                   </Link>
                   <Link href={`/products/delete/${each._id}`}>
-                    <button type="button" className="btn-danger">
+                    <button type="button" className="btn-primary">
                       Delete
                     </button>
                   </Link>
