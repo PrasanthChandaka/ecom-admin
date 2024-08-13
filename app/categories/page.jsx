@@ -12,7 +12,7 @@ function Categories({ swal }) {
   const [categoryItem, setCategoryItem] = useState(null);
 
   const categoryFetching = async () => {
-    const url = "http://localhost:3000/api/products/category";
+    const url = "/api/products/category";
     const response = await fetch(url);
     const data = await response.json();
     setData(data.categories);
