@@ -39,7 +39,7 @@ function Categories({ swal }) {
       parent,
     };
     if (categoryItem) {
-      const url = "http://localhost:3000/api/products/category";
+      const url = "/api/products/category";
       const options = {
         method: "PUT",
         headers: {
@@ -59,7 +59,7 @@ function Categories({ swal }) {
       setCategory("");
       setParent("");
     } else {
-      const url = "http://localhost:3000/api/products/category";
+      const url = "/api/products/category";
       const options = {
         method: "POST",
         headers: {
@@ -99,16 +99,13 @@ function Categories({ swal }) {
       .then((result) => {
         if (result.isConfirmed === true) {
           async function deleteItem() {
-            const response = await fetch(
-              "http://localhost:3000/api/products/category",
-              {
-                method: "DELETE",
-                headers: {
-                  "Content-Type": "application/json",
-                },
-                body: JSON.stringify({ _id: item._id }),
-              }
-            );
+            const response = await fetch("/api/products/category", {
+              method: "DELETE",
+              headers: {
+                "Content-Type": "application/json",
+              },
+              body: JSON.stringify({ _id: item._id }),
+            });
             const data = await response.json();
             if (data.success) {
               toast.success(data.message);
