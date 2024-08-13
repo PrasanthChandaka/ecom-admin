@@ -6,7 +6,7 @@ import toast from "react-hot-toast";
 import { MdDelete, MdEdit } from "react-icons/md";
 import { withSwal } from "react-sweetalert2";
 
-const Categories = ({ swal }) => {
+function Categories({ swal }) {
   const [parent, setParent] = useState(null);
   const [Category, setCategory] = useState("");
   const [data, setData] = useState([]);
@@ -201,6 +201,6 @@ const Categories = ({ swal }) => {
       </div>
     </Layout>
   );
-};
+}
 
 export default withSwal(({ swal }, ref) => <Categories swal={swal} />);
