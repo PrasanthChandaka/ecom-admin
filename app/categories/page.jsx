@@ -1,5 +1,4 @@
 "use client";
-
 import { useEffect, useState } from "react";
 import Layout from "../components/layout";
 import toast from "react-hot-toast";
@@ -20,7 +19,10 @@ function Categories({ swal }) {
   };
 
   useEffect(() => {
-    categoryFetching();
+    async function fetching() {
+      await categoryFetching();
+    }
+    fetching();
   }, []);
 
   const editCategory = async (each) => {
@@ -126,14 +128,14 @@ function Categories({ swal }) {
 
   return (
     <Layout>
-      <div className="w-full h-full flex flex-grow flex-col pr-3 overflow-y-auto overflow-x-hidden">
+      <div className="w-full h-full overflow-y-auto overflow-x-hidden pr-2">
+        <h1 className="text-blue-900 font-bold text-2xl mb-3">Categories</h1>
         <form onSubmit={submitCategory} className="w-full">
-          <h1 className="text-blue-900 font-bold text-2xl mb-3">Categories</h1>
           <label className="text-blue-900 font-semibold text-xl">
             {categoryItem ? "Edit category Name" : "New Category Name"}
           </label>
 
-          <div className="flex gap-2 items-center justify-center w-full">
+          <div className="flex gap-2 flex-wrap sm:flex-nowrap">
             <input
               className="mb-0"
               type="text"
@@ -164,12 +166,12 @@ function Categories({ swal }) {
         <table className="w-full mt-4 rtl:text-right">
           <thead>
             <tr className="bg-blue-600 text-white font-semibold uppercase text-left text-xs text-md">
-              <td className="border p-4">Category Name</td>
-              <td className="border p-4">Parent Category</td>
+              <td className="border p-2">Category Name</td>
+              <td className="border p-2">Parent Category</td>
               <td className="p-2"></td>
             </tr>
           </thead>
-          <tbody>
+          <tbody className="text-xs md:text-sm">
             {data.map((each) => (
               <tr key={each._id}>
                 <td className="border p-2 pointer-events-none">{each.name}</td>
