@@ -38,46 +38,50 @@ function Categories({ swal }) {
       name: Category,
       parent,
     };
-    if (categoryItem) {
-      const url = "/api/products/category";
-      const options = {
-        method: "PUT",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ ...data, _id: categoryItem?._id }),
-      };
-      const response = await fetch(url, options);
+    if (Category) {
+      if (categoryItem) {
+        const url = "/api/products/category";
+        const options = {
+          method: "PUT",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ ...data, _id: categoryItem?._id }),
+        };
+        const response = await fetch(url, options);
 
-      const res = await response.json();
-      if (res.success) {
-        toast.success(res.message);
+        const res = await response.json();
+        if (res.success) {
+          toast.success(res.message);
+        } else {
+          toast.error(res.message);
+        }
+        setCategoryItem(null);
+        setCategory("");
+        setParent("");
       } else {
-        toast.error(res.message);
+        const url = "/api/products/category";
+        const options = {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(data),
+        };
+        const response = await fetch(url, options);
+        const res = await response.json();
+
+        if (res.success) {
+          toast.success(res.message);
+        } else {
+          toast.error(res.message);
+        }
+
+        setCategory("");
+        setParent(null);
       }
-      setCategoryItem(null);
-      setCategory("");
-      setParent("");
     } else {
-      const url = "/api/products/category";
-      const options = {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(data),
-      };
-      const response = await fetch(url, options);
-      const res = await response.json();
-
-      if (res.success) {
-        toast.success(res.message);
-      } else {
-        toast.error(res.message);
-      }
-
-      setCategory("");
-      setParent(null);
+      toast.error("Please enter a category name.");
     }
 
     categoryFetching();
