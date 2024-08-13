@@ -14,6 +14,7 @@ button {
 }
 
 input,
+select,
 textarea {
   @apply border-gray-300 border-2 px-2 py-2 rounded-md w-full mb-2 outline-none;
 }
@@ -24,14 +25,14 @@ textarea:focus {
 }
 
 .btn-primary {
-  @apply bg-blue-500 text-white rounded-md px-4 py-2 font-bold hover:bg-blue-900;
+  @apply bg-blue-500 text-white rounded-md px-2 py-1 font-bold hover:bg-blue-900;
 }
 
 .btn-danger {
-  @apply bg-red-300 text-gray-700 rounded-md px-4 py-2 font-bold hover:bg-red-400;
+  @apply bg-red-400 text-white rounded-md px-2 py-1 font-bold hover:bg-red-500;
 }
 .btn-gray {
-  @apply bg-gray-500 text-white rounded-md px-4 py-2 font-bold hover:bg-gray-600;
+  @apply bg-gray-500 text-white rounded-md px-2 py-1 font-bold hover:bg-gray-600;
 }
 
 ::-webkit-scrollbar {

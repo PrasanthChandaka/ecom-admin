@@ -4,7 +4,7 @@ import Link from "next/link";
 import React, { useState } from "react";
 import { RiLogoutBoxFill } from "react-icons/ri";
 import { FaHome } from "react-icons/fa";
-import { MdSettings } from "react-icons/md";
+import { MdCategory, MdSettings } from "react-icons/md";
 import { FaRectangleList } from "react-icons/fa6";
 import { FaBoxOpen } from "react-icons/fa";
 import { usePathname } from "next/navigation";
@@ -28,6 +28,15 @@ const Nav = () => {
         >
           <FaBoxOpen size={25} />
           <span className="hidden md:block">Products</span>
+        </Link>
+        <Link
+          href="/categories"
+          className={
+            pathName.includes("/categories") ? activeLink : inactiveLink
+          }
+        >
+          <MdCategory size={25} />
+          <span className="hidden md:block">categories</span>
         </Link>
         <Link
           href="/orders"

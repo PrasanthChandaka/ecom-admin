@@ -2,6 +2,7 @@
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
 import Loading from "./loading";
+import { MdDelete, MdEdit } from "react-icons/md";
 
 export default function ProductFetch() {
   const [data, setData] = useState();
@@ -36,12 +37,20 @@ export default function ProductFetch() {
                 <td className="px-6 py-4 pointer-events-none">{each.name}</td>
                 <div className="flex gap-2">
                   <Link href={`/products/edit/${each._id}`}>
-                    <button type="button" className="btn-primary">
+                    <button
+                      type="button"
+                      className="btn-primary flex gap-1 items-center"
+                    >
+                      <MdEdit size={20} />
                       Edit
                     </button>
                   </Link>
                   <Link href={`/products/delete/${each._id}`}>
-                    <button type="button" className="btn-primary">
+                    <button
+                      type="button"
+                      className="btn-danger flex gap-1 items-center text-white"
+                    >
+                      <MdDelete size={20} />
                       Delete
                     </button>
                   </Link>

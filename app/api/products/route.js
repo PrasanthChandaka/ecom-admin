@@ -22,7 +22,7 @@ export async function POST(req) {
   }
 }
 
-export async function GET(reg) {
+export async function GET() {
   try {
     const products = await product.find({});
     return NextResponse.json({ success: true, products });
