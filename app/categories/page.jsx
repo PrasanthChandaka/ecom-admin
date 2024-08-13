@@ -19,10 +19,7 @@ function Categories({ swal }) {
   };
 
   useEffect(() => {
-    async function fetching() {
-      await categoryFetching();
-    }
-    fetching();
+    categoryFetching();
   }, []);
 
   const editCategory = async (each) => {
