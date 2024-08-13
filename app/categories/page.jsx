@@ -5,7 +5,6 @@ import Layout from "../components/layout";
 import toast from "react-hot-toast";
 import { MdDelete, MdEdit } from "react-icons/md";
 import { withSwal } from "react-sweetalert2";
-import axios from "axios";
 
 const Categories = ({ swal }) => {
   const [parent, setParent] = useState(null);
