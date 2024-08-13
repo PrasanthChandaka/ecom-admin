@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import Layout from "../components/layout";
 import toast from "react-hot-toast";
 import { MdDelete, MdEdit } from "react-icons/md";
